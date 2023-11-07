@@ -1,0 +1,21 @@
+header {
+  height: 520px;
+  padding-top: 120px;
+  background-color: #b87da8;
+  background-image: url("https://www.transparenttextures.com/patterns/connected.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+header div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.user-avatar {
+  margin-top: 20px;
+}
+
+.user-name h2 {
+  margin-top: 10px;
+}
+

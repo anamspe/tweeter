@@ -23,8 +23,8 @@
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -35,13 +35,23 @@
 
 <body>
   <!-- Top nav bar (fixed) -->
-  <nav>
+  <nav class="nav-bar">
     <span>tweeter by Ana</span>
     <div class="new-tweet">
       <p><strong>Write</strong> a new tweet</p>
       <i class="fa-solid fa-angles-down arrow" style="color: #be0404;"></i>
     </div>
   </nav>
+
+  <header>
+    <div class="user-avatar">
+      <img src="/images/profile-hex.png"/>
+    </div>
+    <!-- <br> -->
+    <div class="user-name">
+      <h2>Ana Franco</h2>
+    </div>
+  </header>
 
   <!-- Page-specific (main) content here -->
   <main class="container"></main>
