@@ -1,0 +1,29 @@
+main.container button {
+  background-color:#4056a1;
+  padding: 5px 10px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 3px;
+}
+
+form label[for=tweet-text] {
+  font-weight: bold;
+}
+
+#tweet-text {
+  width: 100%;
+  background: transparent;
+  border-style: hidden;
+  /* border-bottom-style: solid; */
+  border-bottom: 3px solid #545149;;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+form .bottom-elements {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
+}
+
