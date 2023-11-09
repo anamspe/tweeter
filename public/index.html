@@ -31,15 +31,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/client.js"></script>
 </head>
 
 <body>
   <!-- Top nav bar (fixed) -->
   <nav class="nav-bar">
     <span>tweeter by Ana</span>
-    <div class="new-tweet">
+    <div class="new-tweet-header">
       <p><strong>Write</strong> a new tweet</p>
       <i class="fa-solid fa-angles-down arrow"></i>
     </div>
@@ -68,23 +68,7 @@
         </div>
       </form>
     </section>
-    <section>
-      <article class="tweets-container">
-        <header>
-          <span class="other-user">Claire</span>
-          <span class="user-handle">@CoffeeLover</span>
-        </header>
-        <p class="tweet-content">Just discovered the most amazing hidden gem of a coffee shop in my neighborhood! ☕️😍 </p>
-        <footer>
-          <span>2 days ago</span>
-          <span class="reaction-icons">
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-            <!-- red heart <i class="fa-solid fa-heart" style="color: #d20f18;"></i> -->
-          </span>
-        </footer>
-      </article>
+    <section id="other-users-tweets" >
     </section>
   </main>
 </body>

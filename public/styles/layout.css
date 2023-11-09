@@ -36,6 +36,7 @@ body {
  .tweets-container header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 40px;
  }
 
@@ -49,8 +50,19 @@ body {
   margin-top: 10px;
  }
 
+ .user-header {
+  display: flex;
+  align-items: center;
+ }
+
+ .user-header img {
+  width: 2em;
+  height: 2em;
+ }
+
  .other-user {
   font-weight: 300;
+  margin-left: 10px;
  }
 
  article footer {
@@ -81,7 +93,7 @@ body {
   padding: 3px
  }
 
- i.fa-solid:hover {
+ span i.fa-solid:hover {
   color: rgb(230, 154, 12);
  }
 
