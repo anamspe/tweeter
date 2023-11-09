@@ -1,3 +1,9 @@
+/*
+ * Client-side JS logic goes here
+ * jQuery is already loaded
+ * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+ */
+
 $(document).ready(function() {
 const data = [
   {
@@ -42,7 +48,7 @@ const createTweetElement = function(tweetObj) {
   const $tweet = $(
     `<article class="tweets-container">
       <header>
-         <span class="user-header">
+        <span class="user-header">
           <img src=${tweetObj['user']['avatars']}>
           <span class="other-user">${tweetObj['user']['name']}</span>
         </span>
@@ -65,4 +71,18 @@ const createTweetElement = function(tweetObj) {
 
 renderTweets(data);
 
+/////////////////////////////////////////////////////
+//        AJAX POST request for new tweets
+/////////////////////////////////////////////////////
+
+$('.new-tweet').on("submit", function(event) {
+  event.preventDefault();
+  const $serializedData = $(this).children().find('#tweet-text').serialize();
+  $.ajax({
+    type: "POST",
+    url: "/tweets",
+    data: $serializedData,
+  })
 })
+
+});
