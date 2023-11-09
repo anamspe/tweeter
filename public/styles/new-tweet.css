@@ -10,15 +10,20 @@ form label[for=tweet-text] {
   font-weight: bold;
 }
 
+ .new-tweet {
+  margin: 50px 10px;
+  font-size: 20px;
+}
+
 #tweet-text {
   width: 100%;
   background: transparent;
   border-style: hidden;
   /* border-bottom-style: solid; */
-  border-bottom: 3px solid #545149;;
+  border-bottom: 3px solid #545149;
   outline: none;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: bold 
 }
 
 form .bottom-elements {

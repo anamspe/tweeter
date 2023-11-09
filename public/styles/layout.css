@@ -29,4 +29,68 @@ body {
   width: 90%;
   margin: 0 auto;
   background-color: #f4f1ec;
+  font-size: 20px;
+  font-weight: bold
  }
+
+ .tweets-container header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+ }
+
+ .tweets-container footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+ }
+
+ footer span {
+  margin-top: 10px;
+ }
+
+ .other-user {
+  font-weight: 300;
+ }
+
+ article footer {
+  border-top: 3px solid #545149;
+ }
+
+ .tweet-content {
+  margin-bottom: 30px;
+ }
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+}
+
+ .tweets-container {
+  border: 3px solid #545149;
+  padding: 25px;
+  margin-bottom: 50px;
+ }
+
+ .tweets-container:hover {
+  box-shadow: 5px 5px #C9CAE2
+ }
+
+ i.fa-solid{
+  padding: 3px
+ }
+
+ i.fa-solid:hover {
+  color: rgb(230, 154, 12);
+ }
+
+ .user-handle {
+  color: #4056a1;
+  opacity: 45%;
+ }
+
+ footer i {
+  color: #4056a1;
+ }
+ 
