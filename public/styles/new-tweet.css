@@ -35,3 +35,16 @@ form .bottom-elements {
 .long-tweet {
   color: red;
 }
+
+div.no-content, div.too-many-chars {
+  display: none;
+  background-color: rgba(250, 4, 4, 0.808);
+  opacity: 85%;
+  color: white;
+  padding: 8px;
+  margin-bottom: 5px;
+  width: 18rem;
+  border-radius: 0 0 10px 10px;
+  font-weight: 300;
+  font-size: 15px;
+}
