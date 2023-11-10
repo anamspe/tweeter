@@ -1,10 +1,15 @@
 header.window-top {
-  height: 520px;
-  width: 100%;
-  padding-top: 120px;
+  height: 400px;
+  width: 100%;  
   background-color: #b87da8;
   background-image: url("https://www.transparenttextures.com/patterns/connected.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+div.top-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  height: 90px
 }
 
 header div {
@@ -12,11 +17,64 @@ header div {
   justify-content: space-around;
 }
 
-.user-avatar {
-  margin-top: 20px;
+.logo-mobile {
+  font-family: 'Bungee', sans-serif;
+  color: #ffffff;
+  margin: 1.5em;
 }
+
+.new-tweet-mobile {
+  display: block;
+  margin-right: 1.5em;
+  color: #ffffff;
+}
+
+.new-tweet-mobile p {
+  margin: 0;
+}
+
+header i {
+  color: #be0404;
+}
+
+ .user-avatar {
+  margin: 0 auto;
+  width: 190px;
+  height: 190px;
+ }
 
 .user-name h2 {
   margin-top: 10px;
 }
 
+
+@media only screen and (min-width: 1024px) {
+
+  body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header.window-top {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 520px;
+    margin:30px;
+    margin-top: 200px;
+    width: 50vw;
+    height: 50vh;
+  }
+
+ div.top-mobile {
+  display: none;
+ }
+
+ .user-avatar {
+  margin-top: 20px;
+  width: auto;
+  height: auto;
+}
+
+
+}

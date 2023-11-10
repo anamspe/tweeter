@@ -48,3 +48,12 @@ div.no-content, div.too-many-chars {
   font-weight: 300;
   font-size: 15px;
 }
+
+@media only screen and (min-width: 1024px) {
+
+  main.container {
+    padding-top: 130px;
+    margin: 20px
+  }
+
+}

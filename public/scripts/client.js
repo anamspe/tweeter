@@ -5,22 +5,22 @@
  */
 
 $(document).ready(function() {
-  
+
   const renderTweets = function(arrOfTweets) {
     for (const tweet of arrOfTweets) {
       let $tweetElement = createTweetElement(tweet);
       $('#other-users-tweets').prepend($tweetElement);
     }
   };
-  
+
   const createTweetElement = function(tweetObj) {
-    
+
     const escape = function(str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
     };
-    
+
     const $tweet = $(
       `<article class="tweets-container">
       <header>
@@ -40,29 +40,29 @@ $(document).ready(function() {
       </span >  
       </footer >  
       </article >`
-      );
-      
-      return $tweet;
-    };
-    
-    /////////////////////////////////////////////////////
-    //        POST request for new tweets
-    /////////////////////////////////////////////////////
-    
-    $('.new-tweet').on("submit", function(event) {
-      event.preventDefault();
-      const $data = $('#tweet-text');
-      const $tweetContent = $data.val();
-      if (!$tweetContent) {
-      $('.no-content').slideDown()
+    );
+
+    return $tweet;
+  };
+
+  /////////////////////////////////////////////////////
+  //        POST request for new tweets
+  /////////////////////////////////////////////////////
+
+  $('.new-tweet').on("submit", function(event) {
+    event.preventDefault();
+    const $data = $('#tweet-text');
+    const $tweetContent = $data.val();
+    if (!$tweetContent) {
+      $('.no-content').slideDown();
       return;
     }
     if ($tweetContent.length > 140) {
-      $('.too-many-chars').slideDown()
+      $('.too-many-chars').slideDown();
       return;
     }
     $('.no-content').slideUp();
-    $('.too-many-chars').slideUp()
+    $('.too-many-chars').slideUp();
     const $serializedData = $data.serialize();
     $.post("/tweets", $serializedData)
       .then(() => {
@@ -74,9 +74,9 @@ $(document).ready(function() {
 
   });
 
-/////////////////////////////////////////////////////
-//        GET request for tweets in DB
-/////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////
+  //        GET request for tweets in DB
+  /////////////////////////////////////////////////////
 
   const loadTweets = function() {
     $.getJSON("/tweets/", function(data) {

@@ -8,7 +8,7 @@
     "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
-    "created_at": 1699415508812
+    "created_at": 1699351134161
   },
   {
     "user": {
@@ -19,6 +19,17 @@
     "content": {
       "text": "Je pense , donc je suis"
     },
-    "created_at": 1699501908812
+    "created_at": 1699437534161
+  },
+  {
+    "user": {
+      "name": "Ana Franco",
+      "avatars": "https://i.imgur.com/z5LNkkB.png",
+      "handle": "@anamspe"
+    },
+    "content": {
+      "text": "Responsive design is pretty cool! 🤩"
+    },
+    "created_at": 1699523934161
   }
 ]

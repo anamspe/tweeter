@@ -86,7 +86,8 @@ body {
  }
 
  .tweets-container:hover {
-  box-shadow: 5px 5px #C9CAE2
+  box-shadow: 5px 5px #C9CAE2;
+  transition: all 150ms ease-in-out;
  }
 
  i.fa-solid{
@@ -95,6 +96,12 @@ body {
 
  span i.fa-solid:hover {
   color: rgb(230, 154, 12);
+  transition: all 250ms ease-in-out;
+ }
+
+ span i.fa-solid.fa-heart:hover {
+  color: #be0404;
+  transition: all 250ms ease-in-out;
  }
 
  .user-handle {
