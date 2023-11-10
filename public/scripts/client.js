@@ -6,17 +6,17 @@
 
 $(document).ready(function() {
 
-const renderTweets = function(arrOfTweets) {
-  for (const tweet of arrOfTweets) {
-    let $tweetElement = createTweetElement(tweet);
-    $('#other-users-tweets').append($tweetElement);
-  }
-}
+  const renderTweets = function(arrOfTweets) {
+    for (const tweet of arrOfTweets) {
+      let $tweetElement = createTweetElement(tweet);
+      $('#other-users-tweets').append($tweetElement);
+    }
+  };
 
-const createTweetElement = function(tweetObj) {
+  const createTweetElement = function(tweetObj) {
 
-  const $tweet = $(
-    `<article class="tweets-container">
+    const $tweet = $(
+      `<article class="tweets-container">
       <header>
         <span class="user-header">
           <img src=${tweetObj.user.avatars}>
@@ -34,42 +34,48 @@ const createTweetElement = function(tweetObj) {
         </span >  
       </footer >  
     </article >`
-  );
+    );
 
-  return $tweet;
-}  
+    return $tweet;
+  };
 
-/////////////////////////////////////////////////////
-//        POST request for new tweets
-/////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////
+  //        POST request for new tweets
+  /////////////////////////////////////////////////////
 
-// $('#tweet-text').on("input", function() {
-//   const $tweetLength = this.value.length;
-//   console.log($tweetLength);
-// })
+  // $('#tweet-text').on("input", function() {
+  //   const $tweetLength = this.value.length;
+  //   console.log($tweetLength);
+  // })
 
-$('.new-tweet').on("submit", function(event) {
-  event.preventDefault();
-  const $data = $(this).children().find('#tweet-text');
-  const $serializedData = $data.serialize();
-  // if ($serializedData.length -5 <= 0) {
-  //   alert("Please enter your tweet before submitting")
-  // }
-  $.post("/tweets", $serializedData)
+  $('.new-tweet').on("submit", function(event) {
+    event.preventDefault();
+    const $data = $('#tweet-text');
+    const $tweetContent = $data.val()
+    if (!$tweetContent) {
+      alert("Please enter your tweet before submitting!");
+      return;
+    }
+    if ($tweetContent.length > 140) {
+      alert("Please limit your tweet to 140 characters!");
+      return;
+    }
+    const $serializedData = $data.serialize();
+    $.post("/tweets", $serializedData);
 
   });
 
-/////////////////////////////////////////////////////
-//        GET request for tweets in DB
-/////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////
+  //        GET request for tweets in DB
+  /////////////////////////////////////////////////////
 
-const loadTweets = function () {
-  $.getJSON("/tweets/", function (data) {
-    renderTweets(data);
-  })
-}
+  const loadTweets = function() {
+    $.getJSON("/tweets/", function(data) {
+      renderTweets(data);
+    });
+  };
 
-loadTweets();
+  loadTweets();
 
 
 });
