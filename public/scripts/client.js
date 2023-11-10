@@ -9,11 +9,17 @@ $(document).ready(function() {
   const renderTweets = function(arrOfTweets) {
     for (const tweet of arrOfTweets) {
       let $tweetElement = createTweetElement(tweet);
-      $('#other-users-tweets').append($tweetElement);
+      $('#other-users-tweets').prepend($tweetElement);
     }
   };
 
   const createTweetElement = function(tweetObj) {
+
+    const escape = function(str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
 
     const $tweet = $(
       `<article class="tweets-container">
@@ -24,7 +30,7 @@ $(document).ready(function() {
         </span>
         <span class="user-handle">${tweetObj.user.handle}</span>
       </header>  
-      <p class="tweet-content">${tweetObj.content.text}</p>
+      <p class="tweet-content">${escape(tweetObj.content.text)}</p>
       <footer>
         <span>${timeago.format((tweetObj.created_at) - 11 * 1000 * 60 * 60)}</span>
         <span class="reaction-icons" >
@@ -39,19 +45,14 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  /////////////////////////////////////////////////////
-  //        POST request for new tweets
-  /////////////////////////////////////////////////////
-
-  // $('#tweet-text').on("input", function() {
-  //   const $tweetLength = this.value.length;
-  //   console.log($tweetLength);
-  // })
+/////////////////////////////////////////////////////
+//        POST request for new tweets
+/////////////////////////////////////////////////////
 
   $('.new-tweet').on("submit", function(event) {
     event.preventDefault();
     const $data = $('#tweet-text');
-    const $tweetContent = $data.val()
+    const $tweetContent = $data.val();
     if (!$tweetContent) {
       alert("Please enter your tweet before submitting!");
       return;
@@ -61,13 +62,18 @@ $(document).ready(function() {
       return;
     }
     const $serializedData = $data.serialize();
-    $.post("/tweets", $serializedData);
+    $.post("/tweets", $serializedData)
+      .then(() => {
+        $('#tweet-text').val('');
+        loadTweets();
+      });
+
 
   });
 
-  /////////////////////////////////////////////////////
-  //        GET request for tweets in DB
-  /////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+//        GET request for tweets in DB
+/////////////////////////////////////////////////////
 
   const loadTweets = function() {
     $.getJSON("/tweets/", function(data) {
@@ -76,6 +82,5 @@ $(document).ready(function() {
   };
 
   loadTweets();
-
 
 });
