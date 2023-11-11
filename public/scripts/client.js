@@ -6,17 +6,21 @@
 
 $(document).ready(function() {
 
+  // Function to render Tweets from database
   const renderTweets = function(arrOfTweets) {
+    $('#other-users-tweets').empty();
     for (const tweet of arrOfTweets) {
-      let $tweetElement = createTweetElement(tweet);
+      const $tweetElement = createTweetElement(tweet);
       $('#other-users-tweets').prepend($tweetElement);
     }
   };
 
+  // Function that will create the HTML to prepend tweets in the page
   const createTweetElement = function(tweetObj) {
 
+    // Function to prevent XSS attacks (-someone posting scripts-)
     const escape = function(str) {
-      let div = document.createElement("div");
+      const div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
     };
@@ -51,27 +55,36 @@ $(document).ready(function() {
 
   $('.new-tweet').on("submit", function(event) {
     event.preventDefault();
-    const $data = $('#tweet-text');
-    const $tweetContent = $data.val();
+    const $inputData = $(this).find('#tweet-text');
+    const $tweetContent = $inputData.val();
+    const $counter = $(this).find('.counter');
+
+    const $noContentError = $(this).find('.no-content');
+    const $tooLong = $(this).find('.too-many-chars');
+
+    // Error for when the form is empty
     if (!$tweetContent) {
-      $('.no-content').slideDown();
+      $noContentError.slideDown();
       return;
     }
+    $noContentError.slideUp();
+
+    // Error message for when tweet passes character limit
     if ($tweetContent.length > 140) {
-      $('.too-many-chars').slideDown();
+      $tooLong.slideDown();
       return;
     }
-    $('.no-content').slideUp();
-    $('.too-many-chars').slideUp();
-    const $serializedData = $data.serialize();
+    $tooLong.slideUp();
+
+    // Post tweet if it passes conditions
+    const $serializedData = $inputData.serialize();
     $.post("/tweets", $serializedData)
       .then(() => {
         loadTweets();
-        $('#tweet-text').val('');
-        $('.counter').val('140');
+        // Clear form and reset counter
+        $inputData.val('');
+        $counter.val('140');
       });
-
-
   });
 
   /////////////////////////////////////////////////////

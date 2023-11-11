@@ -1,6 +1,6 @@
 header.window-top {
   height: 400px;
-  width: 100%;  
+  width: 100%;
   background-color: #b87da8;
   background-image: url("https://www.transparenttextures.com/patterns/connected.png");
 }
@@ -9,7 +9,7 @@ div.top-mobile {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  height: 90px
+  height: 90px;
 }
 
 header div {
@@ -17,8 +17,12 @@ header div {
   justify-content: space-around;
 }
 
+header i {
+  color: #be0404;
+}
+
 .logo-mobile {
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   color: #ffffff;
   margin: 1.5em;
 }
@@ -33,23 +37,17 @@ header div {
   margin: 0;
 }
 
-header i {
-  color: #be0404;
-}
-
- .user-avatar {
+.user-avatar {
   margin: 0 auto;
   width: 190px;
   height: 190px;
- }
+}
 
 .user-name h2 {
   margin-top: 10px;
 }
 
-
 @media only screen and (min-width: 1024px) {
-
   body {
     display: flex;
     justify-content: space-between;
@@ -60,21 +58,19 @@ header i {
     justify-content: center;
     flex-direction: column;
     height: 520px;
-    margin:30px;
+    margin: 30px;
     margin-top: 200px;
     width: 50vw;
     height: 50vh;
   }
 
- div.top-mobile {
-  display: none;
- }
+  div.top-mobile {
+    display: none;
+  }
 
- .user-avatar {
-  margin-top: 20px;
-  width: auto;
-  height: auto;
-}
-
-
+  .user-avatar {
+    margin-top: 20px;
+    width: auto;
+    height: auto;
+  }
 }

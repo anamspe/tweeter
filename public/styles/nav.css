@@ -20,14 +20,14 @@ nav .new-tweet-header {
 }
 
 @media only screen and (min-width: 1024px) {
-  nav { 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100vw;
-  height: 120px;
-  background-color: #4056a1;
-  color: #ffffff;
-  position: fixed;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 120px;
+    background-color: #4056a1;
+    color: #ffffff;
+    position: fixed;
   }
 }

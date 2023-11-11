@@ -1,77 +1,92 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 /*
- * Global layout stuff
- */
+  * Global layout stuff
+  */
 
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+  * Additional CSS can be defined below or in other CSS files, as per instructions
+  */
 
- main {
+main {
   width: 90%;
   margin: 0 auto;
   background-color: #f4f1ec;
   font-size: 20px;
-  font-weight: bold
- }
+  font-weight: bold;
+}
 
- .tweets-container header {
+article footer {
+  border-top: 3px solid #545149;
+}
+
+footer span {
+  margin-top: 10px;
+}
+
+i.fa-solid {
+  padding: 3px;
+}
+
+span i.fa-solid:hover {
+  color: rgb(230, 154, 12);
+  transition: all 250ms ease-in-out;
+}
+
+span i.fa-solid.fa-heart:hover {
+  color: #be0404;
+  transition: all 250ms ease-in-out;
+}
+
+footer i {
+  color: #4056a1;
+}
+
+.tweets-container header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
- }
+}
 
- .tweets-container footer {
+.tweets-container footer {
   display: flex;
   justify-content: space-between;
   font-size: 15px;
- }
+}
 
- footer span {
-  margin-top: 10px;
- }
-
- .user-header {
+.user-header {
   display: flex;
   align-items: center;
- }
+}
 
- .user-header img {
+.user-header img {
   width: 2em;
   height: 2em;
- }
+}
 
- .other-user {
+.other-user {
   font-weight: 300;
   margin-left: 10px;
- }
+}
 
- article footer {
-  border-top: 3px solid #545149;
- }
-
- .tweet-content {
+.tweet-content {
   margin-bottom: 30px;
- }
+}
 
 .arrow {
   display: flex;
@@ -79,37 +94,18 @@ body {
   font-weight: 900;
 }
 
- .tweets-container {
+.tweets-container {
   border: 3px solid #545149;
   padding: 25px;
   margin-bottom: 50px;
- }
+}
 
- .tweets-container:hover {
-  box-shadow: 5px 5px #C9CAE2;
+.tweets-container:hover {
+  box-shadow: 5px 5px #c9cae2;
   transition: all 150ms ease-in-out;
- }
+}
 
- i.fa-solid{
-  padding: 3px
- }
-
- span i.fa-solid:hover {
-  color: rgb(230, 154, 12);
-  transition: all 250ms ease-in-out;
- }
-
- span i.fa-solid.fa-heart:hover {
-  color: #be0404;
-  transition: all 250ms ease-in-out;
- }
-
- .user-handle {
+.user-handle {
   color: #4056a1;
   opacity: 45%;
- }
-
- footer i {
-  color: #4056a1;
- }
- 
+}

@@ -49,6 +49,7 @@
     </div>
   </nav>
 
+  <!-- Header with name and avatar -->
   <header class="window-top">
     <div class="top-mobile">
       <span class="logo-mobile">tweeter by Ana</span>
@@ -60,7 +61,6 @@
     <div class="user-avatar">
       <img src="/images/profile-hex.png" />
     </div>
-    <!-- <br> -->
     <div class="user-name">
       <h2>Ana Franco</h2>
     </div>
@@ -68,10 +68,11 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
+
+    <!-- Compose tweet section -->
     <section class="new-tweet" method="POST" action="/tweets/">
       <form>
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div class="no-content">Please type your message before tweeting.</div>
         <div class="too-many-chars">Please limit your tweet to 140 characters.</div>
         <div class="bottom-elements">
@@ -80,8 +81,10 @@
         </div>
       </form>
     </section>
-    <section id="other-users-tweets">
-    </section>
+
+    <!-- Tweets/timeline inside the following section -->
+    <section id="other-users-tweets"></section>
+
   </main>
 </body>
 

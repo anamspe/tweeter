@@ -1,9 +1,16 @@
 $(document).ready(function() {
+
   $('#tweet-text').on("input", function() {
-    const charactersLeft = 140 - this.value.length;
-    const $counter = $(this).siblings('div').children('.counter')
-    $counter.html(charactersLeft);
-    if (charactersLeft < 0)  {
+    const $form = $(this).closest('form');
+    const $counter = $form.find('.counter');
+    const $tweet = $(this).val();
+    const $charactersLeft = 140 - $tweet.length;
+
+    // Counter number will change accordingly to the input
+    $counter.text($charactersLeft);
+
+    // Add long-tweet class to style the counter colour
+    if ($charactersLeft < 0) {
       $counter.addClass("long-tweet");
     } else {
       $counter.removeClass("long-tweet");
