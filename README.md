@@ -6,7 +6,9 @@ Created with HTML, CSS, JS, jQuery and AJAX.
 
 ## Final Product
 
+!["Tweeter Front Page on Desktop Screen"] (https://github.com/anamspe/tweeter/blob/master/docs/Tweeter-frontpage-desktop.png?raw=true)
 
+!["Tweeter Front Page on Mobile Screen] (https://github.com/anamspe/tweeter/blob/master/docs/Tweeter-frontpage-mobile.png?raw=true)
 
 ## Getting Started
 
